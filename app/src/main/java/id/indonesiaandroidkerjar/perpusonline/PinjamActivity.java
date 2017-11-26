@@ -51,6 +51,18 @@ public class PinjamActivity extends AppCompatActivity {
         }else{
             //jika name dan phone TIDAK kosong
             Toast.makeText(this, "Thanks", Toast.LENGTH_LONG).show();
+            shareItem(name,phone,hrgSewa.getText().toString());
         }
+    }
+
+    private void shareItem(String name, String phone, String price){
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        String message = "Nama saya : "+ name +" dengan no. telp " + phone +
+                " meminjam buku dengan total harga : " + price;
+
+        shareIntent.putExtra(Intent.EXTRA_TEXT,message);
+        shareIntent.setType("text/plain");
+        startActivity(shareIntent);
+
     }
 }
