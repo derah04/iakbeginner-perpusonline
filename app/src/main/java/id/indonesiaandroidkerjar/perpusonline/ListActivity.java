@@ -1,5 +1,6 @@
 package id.indonesiaandroidkerjar.perpusonline;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -53,5 +54,24 @@ public class ListActivity extends AppCompatActivity {
 
         listBook.setAdapter(adapter);
 
+        listBook.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String selectedItem = staticBookTitle[i];
+
+                Intent detailBookIntent = new Intent(
+                        ListActivity.this, // class yang saat ini
+                        DetailBookActivity.class); //class yg akan ditampilkan viewnya
+
+                detailBookIntent.putExtra("book_title", selectedItem);
+                startActivity(detailBookIntent);
+
+                Toast.makeText(
+                        ListActivity.this,
+                        selectedItem,
+                        Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 }
