@@ -28,17 +28,23 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String username = editUsername.getText().toString();
                 String password = editPassword.getText().toString();
+                //Mengisi nilai dari parameter method validateLogin dengan hasil inputan
                 validateLogin(username, password);
             }
         });
     }
 
-    private void validateLogin(String username, String password){
+    //method
+    private void validateLogin(String username, String password)
+    {
         if (username.equals("")){
+            //Jika username kosong
             Toast.makeText(this, "Username is required!", Toast.LENGTH_SHORT).show();
         }else if(password.equals("")){
+            //jika password kosong
             Toast.makeText(this, "Password is required!", Toast.LENGTH_SHORT).show();
         }else{
+            //jika username dan password TIDAK kosong
             Intent intent = new Intent(this, ListActivity.class);
             startActivity(intent);
         }
