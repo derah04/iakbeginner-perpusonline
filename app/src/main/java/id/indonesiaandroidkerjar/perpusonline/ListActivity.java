@@ -13,9 +13,12 @@ import java.util.List;
 
 public class ListActivity extends AppCompatActivity {
 
+    ListView listBook;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+
+        listBook = (ListView) findViewById(R.id.listBuku);
     }
 }

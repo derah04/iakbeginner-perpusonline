@@ -28,14 +28,14 @@
             android:text="No. Telp" />
 
         <EditText
-            android:id="@+id/txtPassword"
+            android:id="@+id/txtPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnPinjam"
+        android:id="@+id/btnSimpanPinjam"
         android:textColor="#FFF"
         android:text="pinjam"
         android:background="@color/colorButton"
